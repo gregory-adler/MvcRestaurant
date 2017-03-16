@@ -15,6 +15,8 @@ namespace MvcRestaurant.Data
         {
         }
 
+        public DbSet<Server> Servers { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
