@@ -5,11 +5,8 @@ using System.Threading.Tasks;
 
 namespace MvcRestaurant.Models
 {
-    public class Server
+    public class Server : Employee
     {
-        public int ServerId { get; set; }
-        public string name { get; set; }
-        public int age { get; set; }
-        public string type { get; set; }
+       public double tips { get; set; }
     }
 }
