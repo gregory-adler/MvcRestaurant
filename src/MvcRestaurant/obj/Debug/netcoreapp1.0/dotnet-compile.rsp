@@ -243,6 +243,7 @@ C:\Users\Gregory\Documents\GitHub\MvcRestaurant\src\MvcRestaurant\Migrations\201
 C:\Users\Gregory\Documents\GitHub\MvcRestaurant\src\MvcRestaurant\Migrations\ApplicationDbContextModelSnapshot.cs
 C:\Users\Gregory\Documents\GitHub\MvcRestaurant\src\MvcRestaurant\Models\ApplicationUser.cs
 C:\Users\Gregory\Documents\GitHub\MvcRestaurant\src\MvcRestaurant\Models\Employee.cs
+C:\Users\Gregory\Documents\GitHub\MvcRestaurant\src\MvcRestaurant\Models\IEmployeesRepository.cs
 C:\Users\Gregory\Documents\GitHub\MvcRestaurant\src\MvcRestaurant\Models\Server.cs
 C:\Users\Gregory\Documents\GitHub\MvcRestaurant\src\MvcRestaurant\Models\AccountViewModels\ExternalLoginConfirmationViewModel.cs
 C:\Users\Gregory\Documents\GitHub\MvcRestaurant\src\MvcRestaurant\Models\AccountViewModels\ForgotPasswordViewModel.cs
