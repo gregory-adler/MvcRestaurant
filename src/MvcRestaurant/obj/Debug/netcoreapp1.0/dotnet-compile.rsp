@@ -244,6 +244,8 @@ C:\Users\Gregory\Documents\GitHub\MvcRestaurant\src\MvcRestaurant\Migrations\201
 C:\Users\Gregory\Documents\GitHub\MvcRestaurant\src\MvcRestaurant\Migrations\20170405213222_Employees.Designer.cs
 C:\Users\Gregory\Documents\GitHub\MvcRestaurant\src\MvcRestaurant\Migrations\20170405214601_Initial2.cs
 C:\Users\Gregory\Documents\GitHub\MvcRestaurant\src\MvcRestaurant\Migrations\20170405214601_Initial2.Designer.cs
+C:\Users\Gregory\Documents\GitHub\MvcRestaurant\src\MvcRestaurant\Migrations\20170405220512_DiscriminatorValue.cs
+C:\Users\Gregory\Documents\GitHub\MvcRestaurant\src\MvcRestaurant\Migrations\20170405220512_DiscriminatorValue.Designer.cs
 C:\Users\Gregory\Documents\GitHub\MvcRestaurant\src\MvcRestaurant\Migrations\ApplicationDbContextModelSnapshot.cs
 C:\Users\Gregory\Documents\GitHub\MvcRestaurant\src\MvcRestaurant\Models\ApplicationUser.cs
 C:\Users\Gregory\Documents\GitHub\MvcRestaurant\src\MvcRestaurant\Models\Employee.cs
