@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MvcRestaurant.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace MvcRestaurant.Models
 {
@@ -13,9 +14,14 @@ namespace MvcRestaurant.Models
         {
             db = database;
         }
-        public async Task<IList<Employee>> getEmployees()
+        public async Task<IList<Server>> getEmployees()
         {
-            return null;
+            var employeesQuery = db.Servers
+            .AsNoTracking();
+
+            IList<Server> servers = new List<Server>();
+            servers = await employeesQuery.ToListAsync();
+            return servers;
         }
     }
 }

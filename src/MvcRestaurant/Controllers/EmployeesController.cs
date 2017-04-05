@@ -15,10 +15,10 @@ namespace MvcRestaurant.Controllers
             _employeesRepository = employeesRepository;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            ViewData["Title"] = "Employees";
-            return View();
+            var employees = _employeesRepository.getEmployees();
+            return View(await employees);
         }
     }
 }
