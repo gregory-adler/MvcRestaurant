@@ -23,5 +23,12 @@ namespace MvcRestaurant.Models
             employees = await employeesQuery.ToListAsync();
             return employees;
         }
+
+        public async Task createEmployee(Employee employee)
+        {
+            db.Add(employee);
+            await db.SaveChangesAsync();
+
+        }
     }
 }
