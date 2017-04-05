@@ -240,6 +240,8 @@ C:\Users\Gregory\Documents\GitHub\MvcRestaurant\src\MvcRestaurant\Data\Applicati
 C:\Users\Gregory\Documents\GitHub\MvcRestaurant\src\MvcRestaurant\Data\DBInitializer.cs
 C:\Users\Gregory\Documents\GitHub\MvcRestaurant\src\MvcRestaurant\Migrations\20170404231752_Initial.cs
 C:\Users\Gregory\Documents\GitHub\MvcRestaurant\src\MvcRestaurant\Migrations\20170404231752_Initial.Designer.cs
+C:\Users\Gregory\Documents\GitHub\MvcRestaurant\src\MvcRestaurant\Migrations\20170405213222_Employees.cs
+C:\Users\Gregory\Documents\GitHub\MvcRestaurant\src\MvcRestaurant\Migrations\20170405213222_Employees.Designer.cs
 C:\Users\Gregory\Documents\GitHub\MvcRestaurant\src\MvcRestaurant\Migrations\ApplicationDbContextModelSnapshot.cs
 C:\Users\Gregory\Documents\GitHub\MvcRestaurant\src\MvcRestaurant\Models\ApplicationUser.cs
 C:\Users\Gregory\Documents\GitHub\MvcRestaurant\src\MvcRestaurant\Models\Employee.cs
