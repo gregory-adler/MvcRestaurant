@@ -19,5 +19,15 @@ namespace MvcRestaurant.Models
                 return this.GetType().Name;
             }
         }
+        public List<String> Types
+        {
+            get
+            {
+                List<String> employeeTypes = new List<String>();
+                employeeTypes.Add("Server");
+                employeeTypes.Add("Host");
+                return employeeTypes;
+            }
+        }
     }
 }
