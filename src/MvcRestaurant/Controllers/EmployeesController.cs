@@ -20,5 +20,9 @@ namespace MvcRestaurant.Controllers
             var employees = _employeesRepository.getEmployees();
             return View(await employees);
         }
+        public IActionResult Create()
+        {
+            return View();
+        }
     }
 }
