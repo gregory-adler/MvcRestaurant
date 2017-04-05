@@ -14,14 +14,14 @@ namespace MvcRestaurant.Models
         {
             db = database;
         }
-        public async Task<IList<Server>> getEmployees()
+        public async Task<IList<Employee>> getEmployees()
         {
-            var employeesQuery = db.Servers
+            var employeesQuery = db.Employees
             .AsNoTracking();
 
-            IList<Server> servers = new List<Server>();
-            servers = await employeesQuery.ToListAsync();
-            return servers;
+            IList<Employee> employees = new List<Employee>();
+            employees = await employeesQuery.ToListAsync();
+            return employees;
         }
     }
 }

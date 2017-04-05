@@ -12,7 +12,7 @@ namespace MvcRestaurant.Data
             context.Database.EnsureCreated();
 
             // Look for any students.
-            if (context.Servers.Any())
+            if (context.Employees.Any())
             {
                 return;   // DB has been seeded
             }
@@ -22,7 +22,7 @@ namespace MvcRestaurant.Data
           };
             foreach (Server s in servers)
             {
-                context.Servers.Add(s);
+                context.Employees.Add(s);
             }
             context.SaveChanges();
         }
