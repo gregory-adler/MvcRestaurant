@@ -16,11 +16,12 @@ namespace MvcRestaurant.Data
             {
                 return;   // DB has been seeded
             }
-            var servers = new Server[]
+            var employees = new Employee[]
           {
-                new Server {Name = "test", StartDate = DateTime.Parse("2010-09-01")  },
+                new Server {Name = "testServer", StartDate = DateTime.Parse("2010-09-01")  },
+                new Host {Name = "testHost", StartDate = DateTime.Parse("2010-09-01")  },
           };
-            foreach (Server s in servers)
+            foreach (Employee s in employees)
             {
                 context.Employees.Add(s);
             }

@@ -8,9 +8,10 @@ using MvcRestaurant.Data;
 namespace MvcRestaurant.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170405225318_Host")]
+    partial class Host
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.1")
@@ -33,17 +34,6 @@ namespace MvcRestaurant.Migrations
                     b.ToTable("Employees");
 
                     b.HasDiscriminator<string>("Discriminator").HasValue("Employee");
-                });
-
-            modelBuilder.Entity("MvcRestaurant.Models.Host", b =>
-                {
-                    b.HasBaseType("MvcRestaurant.Models.Employee");
-
-                    b.Property<string>("greeting");
-
-                    b.ToTable("Host");
-
-                    b.HasDiscriminator().HasValue("Host");
                 });
 
             modelBuilder.Entity("MvcRestaurant.Models.Server", b =>
