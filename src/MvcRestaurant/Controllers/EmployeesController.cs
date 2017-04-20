@@ -93,7 +93,7 @@ namespace MvcRestaurant.Controllers
 
         [HttpPost, ActionName("Edit")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("EnrollmentDate,FirstMidName,LastName")] Employee employee)
+        public async Task<IActionResult> Edit(int id, DateTime EnrollmentDate, string Name, string DiscriminatorValue)
         {
             int employeeID = id;
             var employeeToUpdate = await _employeesRepository.getEmployee(employeeID);
@@ -101,7 +101,7 @@ namespace MvcRestaurant.Controllers
             {
                 try
                 {
-                    await _employeesRepository.updateEmployee(employeeID, employee);
+                   // await _employeesRepository.updateEmployee(employeeID, employee);
                     return RedirectToAction("Index");
                 }
                 catch (DbUpdateException /* ex */)
