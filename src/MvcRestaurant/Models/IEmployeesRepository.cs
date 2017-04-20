@@ -10,5 +10,7 @@ namespace MvcRestaurant.Models
         Task<IList<Employee>> getEmployees();
         Task createHost(Host host);
         Task createServer(Server server);
+        Task<Employee> getEmployee(int id);
+        Task updateEmployee(int id, Employee employee);
     }
 }

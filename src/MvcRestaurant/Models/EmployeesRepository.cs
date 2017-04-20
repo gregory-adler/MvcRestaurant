@@ -35,5 +35,20 @@ namespace MvcRestaurant.Models
             db.Add(server);
             await db.SaveChangesAsync();
         }
+
+        public async Task<Employee> getEmployee(int id)
+        {
+            var employee = await db.Employees.SingleOrDefaultAsync(e => e.ID == id);
+            return employee;
+
+        }
+        
+        public async Task updateEmployee(int id, Employee employee)
+        {
+            var toModify = db.Employees.SingleOrDefault(e => e.ID == id);
+            db.Employees.Remove(toModify);
+            db.Employees.Add(employee);
+            await db.SaveChangesAsync();
+        }
     }
 }

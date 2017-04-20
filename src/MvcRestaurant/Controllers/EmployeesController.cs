@@ -80,5 +80,39 @@ namespace MvcRestaurant.Controllers
             }
             return View(server);
         }
+
+        public async Task<IActionResult> Edit(int id)
+        {
+            var employee = await _employeesRepository.getEmployee(id);
+            if (employee == null)
+            {
+                return NotFound();
+            }
+            return View(employee);
+        }
+
+        [HttpPost, ActionName("Edit")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, [Bind("EnrollmentDate,FirstMidName,LastName")] Employee employee)
+        {
+            int employeeID = id;
+            var employeeToUpdate = await _employeesRepository.getEmployee(employeeID);
+            if (employeeToUpdate != null)
+            {
+                try
+                {
+                    await _employeesRepository.updateEmployee(employeeID, employee);
+                    return RedirectToAction("Index");
+                }
+                catch (DbUpdateException /* ex */)
+                {
+                    //Log the error (uncomment ex variable name and write a log.)
+                    ModelState.AddModelError("", "Unable to save changes. " +
+                        "Try again, and if the problem persists, " +
+                        "see your system administrator.");
+                }
+            }
+            return View(employeeToUpdate);
+        }
     }
 }
