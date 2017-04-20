@@ -8,6 +8,7 @@ namespace MvcRestaurant.Models
     public interface IEmployeesRepository
     {
         Task<IList<Employee>> getEmployees();
-        Task createEmployee(Employee employee);
+        Task createHost(Host host);
+        Task createServer(Server server);
     }
 }

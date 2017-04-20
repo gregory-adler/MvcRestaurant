@@ -24,11 +24,16 @@ namespace MvcRestaurant.Models
             return employees;
         }
 
-        public async Task createEmployee(Employee employee)
+        public async Task createHost(Host host)
         {
-            db.Add(employee);
+            db.Add(host);
             await db.SaveChangesAsync();
 
+        }
+        public async Task createServer(Server server)
+        {
+            db.Add(server);
+            await db.SaveChangesAsync();
         }
     }
 }

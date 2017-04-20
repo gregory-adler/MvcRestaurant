@@ -22,24 +22,28 @@ namespace MvcRestaurant.Controllers
             var employees = _employeesRepository.getEmployees();
             return View(await employees);
         }
-        public IActionResult Create()
+        public IActionResult CreateHost()
+        {
+            return View();
+        }
+        public IActionResult CreateServer()
         {
             return View();
         }
 
-        // POST: Students/Create
+        // POST: Employees/CreateHost
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(
-           [Bind("Name,StartDate,DiscriminatorValue")] Employee employee)
+        public async Task<IActionResult> CreateHost(
+           [Bind("Name,StartDate")] Host host)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    await _employeesRepository.createEmployee(employee);
+                    await _employeesRepository.createHost(host);
                     return RedirectToAction("Index");
                 }
             }
@@ -50,7 +54,31 @@ namespace MvcRestaurant.Controllers
                     "Try again, and if the problem persists " +
                     "see your system administrator.");
             }
-            return View(employee);
+            return View(host);
+        }
+
+        // POST: Employees/CreateServer
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateServer(
+       [Bind("Name,StartDate")] Server server)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    await _employeesRepository.createServer(server);
+                    return RedirectToAction("Index");
+                }
+            }
+            catch (DbUpdateException /* ex */)
+            {
+                //Log the error (uncomment ex variable name and write a log.
+                ModelState.AddModelError("", "Unable to save changes. " +
+                    "Try again, and if the problem persists " +
+                    "see your system administrator.");
+            }
+            return View(server);
         }
     }
 }
