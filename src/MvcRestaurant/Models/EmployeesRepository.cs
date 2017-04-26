@@ -50,5 +50,15 @@ namespace MvcRestaurant.Models
             db.Employees.Add(employee);
             await db.SaveChangesAsync();
         }
+        public async Task deleteEmployee(int id)
+        {
+            var toDelete = db.Employees.SingleOrDefault(s => s.ID == id);
+            if (toDelete == null)
+            {
+                return;
+            }
+            db.Employees.Remove(toDelete);
+            await db.SaveChangesAsync();
+        }
     }
 }

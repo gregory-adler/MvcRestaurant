@@ -101,7 +101,7 @@ namespace MvcRestaurant.Controllers
             {
                 try
                 {
-                   // await _employeesRepository.updateEmployee(employeeID, employee);
+                    // await _employeesRepository.updateEmployee(employeeID, employee);
                     return RedirectToAction("Index");
                 }
                 catch (DbUpdateException /* ex */)
@@ -114,5 +114,41 @@ namespace MvcRestaurant.Controllers
             }
             return View(employeeToUpdate);
         }
+        public async Task<IActionResult> Delete(int id)
+        {
+            var employee = await _employeesRepository.getEmployee(id);
+            if (employee == null)
+            {
+                return NotFound();
+            }
+            return View(employee);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteEmployee(int id)
+        {
+            var employee = await _employeesRepository.getEmployee(id);
+            {
+                if (employee == null)
+                {
+                    RedirectToAction("Index");
+                }
+                try
+                {
+                    await _employeesRepository.deleteEmployee(id);
+                    return RedirectToAction("Index");
+                }
+                catch
+                {
+                    ViewData["ErrorMessage"] =
+                    "Delete failed. Try again, and if the problem persists " +
+                    "see your system administrator.";
+                }
+                return View(employee);
+
+            }
+        }
     }
 }
+
