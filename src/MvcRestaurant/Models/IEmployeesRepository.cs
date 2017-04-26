@@ -13,5 +13,6 @@ namespace MvcRestaurant.Models
         Task<Employee> getEmployee(int id);
         Task updateEmployee(int id, Employee employee);
         Task deleteEmployee(int id);
+        Task<Employee> getEmployeeDetails(int id);
     }
 }

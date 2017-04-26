@@ -60,5 +60,11 @@ namespace MvcRestaurant.Models
             db.Employees.Remove(toDelete);
             await db.SaveChangesAsync();
         }
+
+        public async Task<Employee> getEmployeeDetails(int id)
+        {
+            var employee = await db.Employees.SingleOrDefaultAsync(e => e.ID == id);
+            return employee;
+        }
     }
 }

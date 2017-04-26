@@ -149,6 +149,18 @@ namespace MvcRestaurant.Controllers
 
             }
         }
+
+        public async Task<IActionResult> Details(int id)
+        {
+            var employee = await _employeesRepository.getEmployeeDetails(id);
+
+            if (employee == null)
+            {
+                return NotFound();
+            }
+
+            return View(employee);
+        }
     }
 }
 
